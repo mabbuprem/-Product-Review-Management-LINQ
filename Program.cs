@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Data;
+using System.Threading.Tasks;
 
 namespace Product_Review_Management_LINQ
 {
@@ -9,7 +9,13 @@ namespace Product_Review_Management_LINQ
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Product_Review_Management_LINQ");
+            ProductReviewManager manager = new ProductReviewManager();
+            List<ProductReview> productReviewFilledList = new List<ProductReview>();
+            productReviewFilledList = manager.AddingValuesInProductReviewList(productReviewFilledList);
+            foreach (ProductReview productReview in productReviewFilledList)
+            {
+                Console.WriteLine(productReview.ToString());
+            }
         }
     }
 }
